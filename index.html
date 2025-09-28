@@ -15,7 +15,26 @@
         </div>
     </main>
     <script>
-        
+
+// BUTTON CALL
+        let resetBtn = document.getElementById("resetBtn");
+        let input;
+        resetBtn.addEventListener('click',() => {input = prompt("How many squares per side do you want?")
+            if (input > 0 && input <= 100) {
+                createGrid(input);
+                console.log(input);
+            } else {
+                alert ("You have to put in a Number between 1 and 100!")
+            }
+        });
+
+//CREATING THE GRID
+
+        function createGrid(num){
+            let squareSize = 500/ num;
+        }
+
+
     </script>
 </body>
 </html>
