@@ -19,10 +19,14 @@
 // BUTTON CALL
         let resetBtn = document.getElementById("resetBtn");
         let input;
-        resetBtn.addEventListener('click',() => {input = prompt("How many squares per side do you want?")
+        let gridContainer = document.getElementById("gridContainer");
+        //createGrid(16);
+
+        resetBtn.addEventListener('click',() => {input = prompt("How many squares per side do you want?(1-100)","16")
             if (input > 0 && input <= 100) {
+                gridContainer.querySelectorAll('*').forEach(n => n.remove());
                 createGrid(input);
-                console.log(input);
+                //console.log(input);
             } else {
                 alert ("You have to put in a Number between 1 and 100!")
             }
@@ -30,24 +34,19 @@
 
 //CREATING THE GRID
 
-        let gridContainer = document.getElementById("gridContainer");
+        
 
         function createGrid(num){
-            let squareSize = Math.floor(500/ num);
+            let squareSize = (100/ num);
             let squares = num * num;
+            console.log(squares);
             for (let i = 0; i < squares; i++) {
                 let newDiv = document.createElement("div");
-                newDiv.style.width = `${squareSize}px`;
-                newDiv.style.height = `${squareSize}px`;
-                newDiv.style.display = "flex";
-                newDiv.style.border = "1px solid blue";
-                console.log(squareSize);
-                console.log(squares);    
+                newDiv.style.width = `${squareSize}%`;
+                newDiv.style.height = `${squareSize}%`;
+                newDiv.classList.add("grid");
                 gridContainer.appendChild(newDiv);
             }
-
-
-
         }
 
 

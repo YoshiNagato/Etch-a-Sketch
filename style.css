@@ -21,6 +21,13 @@ button {
     flex-wrap: wrap;
 }
 
+.grid {
+    /* display:flex;
+    flex: 1 0 calc(10% - 5px);
+    aspect-ratio: 1 / 1; */
+    border: 1px solid black;
+}
+
 /* .test {
     display:flex;
     background-color: aliceblue;
