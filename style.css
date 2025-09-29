@@ -17,4 +17,14 @@ button {
     background-color: rgba(0, 100, 0, 0.416);
     height:500px;
     width:500px;
+    display:flex;
+    flex-wrap: wrap;
 }
+
+/* .test {
+    display:flex;
+    background-color: aliceblue;
+    height:125px;
+    width:125px;
+    border: 1px solid black;
+} */

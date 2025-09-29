@@ -10,7 +10,7 @@
     <main>
         <h1>Etch-a-Sketch</h1>
         <button id="resetBtn">Create a new Grid</button>
-        <div class="gridContainer">
+        <div class="gridContainer" id="gridContainer">
 
         </div>
     </main>
@@ -30,8 +30,24 @@
 
 //CREATING THE GRID
 
+        let gridContainer = document.getElementById("gridContainer");
+
         function createGrid(num){
-            let squareSize = 500/ num;
+            let squareSize = Math.floor(500/ num);
+            let squares = num * num;
+            for (let i = 0; i < squares; i++) {
+                let newDiv = document.createElement("div");
+                newDiv.style.width = `${squareSize}px`;
+                newDiv.style.height = `${squareSize}px`;
+                newDiv.style.display = "flex";
+                newDiv.style.border = "1px solid blue";
+                console.log(squareSize);
+                console.log(squares);    
+                gridContainer.appendChild(newDiv);
+            }
+
+
+
         }
 
 
