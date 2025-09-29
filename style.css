@@ -13,6 +13,14 @@ button {
     margin-bottom:10px;
 }
 
+main {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .gridContainer {
     background-color: rgba(0, 100, 0, 0.416);
     height:500px;

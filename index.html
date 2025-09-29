@@ -13,14 +13,18 @@
         <div class="gridContainer" id="gridContainer">
 
         </div>
+        <div class="footer">
+            <p>Copyright Yoshi Nagato 2025 for The Odin Project</p>
+        </div>
     </main>
+
     <script>
 
 // BUTTON CALL
         let resetBtn = document.getElementById("resetBtn");
         let input;
         let gridContainer = document.getElementById("gridContainer");
-        //createGrid(16);
+        createGrid(16);
 
         resetBtn.addEventListener('click',() => {input = prompt("How many squares per side do you want?(1-100)","16")
             if (input > 0 && input <= 100) {
@@ -34,8 +38,6 @@
 
 //CREATING THE GRID
 
-        
-
         function createGrid(num){
             let squareSize = (100/ num);
             let squares = num * num;
@@ -47,9 +49,18 @@
                 newDiv.classList.add("grid");
                 gridContainer.appendChild(newDiv);
             }
+
+// COLOR CHANGE
+            const boxes = document.querySelectorAll(".grid");
+            boxes.forEach((box) => box.addEventListener('mouseover',() => 
+                box.style.backgroundColor = `rgb(${random()},${random()},${random()})`))
+            
         }
 
-
+        function random(){
+            let randomNum = Math.round(Math.random()*256);
+            return randomNum;
+        }
     </script>
 </body>
 </html>
