@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
 </head>
 <body>
     <main>
-        <h1>Etch-a-Sketch</h1>
+        <div class="header">
+            <h1>Etch-a-Sketch</h1>
+        </div>
         <button id="resetBtn">Create a new Grid</button>
         <div class="gridContainer" id="gridContainer">
-
         </div>
+        
+    </main>
+    <footer>
         <div class="footer">
             <p>Copyright Yoshi Nagato 2025 for The Odin Project</p>
         </div>
-    </main>
-
+    </footer>
     <script>
 
 // BUTTON CALL
@@ -53,7 +60,7 @@
 // COLOR CHANGE
             const boxes = document.querySelectorAll(".grid");
             boxes.forEach((box) => box.addEventListener('mouseover',() => 
-                box.style.backgroundColor = `rgb(${random()},${random()},${random()})`))
+                box.style.backgroundColor = `rgb(${random()}, ${random()}, ${random()})`,{once:true}))
             
         }
 
